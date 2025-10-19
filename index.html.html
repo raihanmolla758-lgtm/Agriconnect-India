@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgriConnect India</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f5;
+      color: #2e4a1f;
+    }
+    header {
+      background-color: #3b6e22;
+      padding: 1rem 2rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: #d9e7c7;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: #fff;
+      text-shadow: 1px 1px 5px #000;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background-color: #7db33f;
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+	  border: 2px solid white;
+      text-decoration: none;
+      box-shadow: 0 5px 8px rgba(125,179,63,0.5);
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #5a8b2e;
+    }
+    .how-it-works {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .how-it-works h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #3b6e22;
+    }
+    .steps {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .step {
+      background: #d7e7bb;
+      border-radius: 15px;
+      padding: 1.5rem;
+      flex: 1 1 250px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    .step h3 {
+      margin-bottom: 1rem;
+      color: #2e4a1f;
+    }
+    .impact {
+      background-color: #7db33f;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .impact h2 {
+      margin-bottom: 2rem;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .stat {
+      min-width: 120px;
+      padding: 1rem;
+      background: #5a8b2e;
+      border-radius: 10px;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+    }
+    footer {
+      background-color: #3b6e22;
+      color: #d9e7c7;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #c0dca1;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+	form.registration-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(125, 179, 63, 0.2);
+      font-size: 1rem;
+	  margin: 10px 100px;
+    }
+
+    form.registration-form h2 {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: #3c5b0b;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      color: #2e4a1f;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 1rem;
+      border: 2px solid #d7e1a1;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2e4a1f;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #7db33f;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    form.registration-form button[type="submit"] {
+      background-color: #7db33f;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    form.registration-form button[type="submit"]:hover,
+    form.registration-form button[type="submit"]:focus {
+      background-color: #6aa731;
+      outline: none;
+    }
+
+    /* Choice container for landowner options */
+    .choice-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">AgriConnect India</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">For NRIs</a>
+    <a href="#">For Laborers</a>
+    <a href="#">Impact</a>
+    <a href="#">Partners</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Reviving Unused Land, Empowering Rural India</h1>
+  <p>Connecting absentee landowners with local laborers to boost agriculture and jobs.</p>
+  <div class="buttons" id="heroButtons">
+    <button class="btn" id="landownerBtn">I own unused land</button>
+      <button class="btn" id="laborerBtn">I am a landless laborer</button>
+  </div>
+</section>
+
+<!-- Registration Section Starts Here -->
+<div id="registrationContainer" style="text-align:center; padding: 10px;"></div>
+<!-- Registration Section Ends Here -->
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>1. Register Your Land or Labor Profile</h3>
+      <p>Easily sign up and provide details of your unused land or agricultural skills.</p>
+    </div>
+    <div class="step">
+      <h3>2. Get Matched and Start Cultivation</h3>
+      <p>Our AI-powered platform connects landowners with local laborers for effective farming.</p>
+    </div>
+    <div class="step">
+      <h3>3. Grow Food, Create Jobs, Impact Lives</h3>
+      <p>Together, we increase food production and generate sustainable rural employment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="impact">
+  <h2>Our Impact</h2>
+  <div class="stats">
+    <div class="stat">
+      <div><strong>0</strong></div>
+      <div>Acres Revived</div>
+    </div>
+    <div class="stat">
+      <div><strong>0</strong></div>
+      <div>Jobs Created</div>
+    </div>
+    <div class="stat">
+      <div><strong>0</strong></div>
+      <div>Tonnes of Food Produced</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2025 AgriConnect India. All rights reserved.</div>
+  <div>
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Terms of Service</a>
+  </div>
+</footer>
+
+<script>
+    const landownerBtn = document.getElementById('landownerBtn');
+    const laborerBtn = document.getElementById('laborerBtn');
+    const heroButtons = document.getElementById('heroButtons');
+    const registrationContainer = document.getElementById('registrationContainer');
+
+    landownerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      heroButtons.style.display = 'none';
+
+      registrationContainer.innerHTML = `
+        <button id="showOptionsBtn" class="btn" style="margin-bottom: 1.5rem;">I Own Unused Land</button> 
+        <div id="choiceContainer" class="choice-container" style="display:none;">
+          <button id="nriBtn" class="btn" style="background-color:#a4c456; color:#2e4a1f;">NRI Landowner Registration</button>
+          <button id="indianBtn" class="btn" style="background-color:#a4c456; color:#2e4a1f;">Indian Resident Landowner Registration</button>
+        </div>
+        <div id="formContainer"></div>
+      `;
+
+      const showOptionsBtn = document.getElementById('showOptionsBtn');
+      const choiceContainer = document.getElementById('choiceContainer');
+      const formContainer = document.getElementById('formContainer');
+      const nriBtn = document.getElementById('nriBtn');
+      const indianBtn = document.getElementById('indianBtn');
+
+      showOptionsBtn.addEventListener('click', () => {
+        choiceContainer.style.display = 'flex';
+        showOptionsBtn.style.display = 'none';
+        formContainer.innerHTML = '';
+      });
+
+      nriBtn.addEventListener('click', () => {
+        formContainer.innerHTML = getNriForm();
+      });
+
+      indianBtn.addEventListener('click', () => {
+        formContainer.innerHTML = getIndianForm();
+      });
+
+      function getNriForm() {
+        return `
+          <form action="/submit-landowner" method="POST" enctype="multipart/form-data" class="registration-form" novalidate>
+            <h2>NRI Landowner Registration</h2>
+            <label for="fullNameNri">Full Name *</label>
+            <input type="text" id="fullNameNri" name="fullName" required placeholder="Your full name" />
+
+            <label for="passportNumber">Passport Number *</label>
+            <input type="text" id="passportNumber" name="passportNumber" required placeholder="Passport Number" />
+
+            <label for="contactEmailNri">Email *</label>
+            <input type="email" id="contactEmailNri" name="email" required placeholder="Your email address" />
+
+            <label for="contactNumberNri">Contact Number *</label>
+            <input type="tel" id="contactNumberNri" name="contactNumber" pattern="[0-9]{10}" placeholder="10-digit mobile number" required />
+
+            <label for="landLocationNri">Land Location (State, District) *</label>
+            <input type="text" id="landLocationNri" name="landLocation" required placeholder="E.g. Maharashtra, Pune" />
+
+            <label for="landSizeNri">Land Size (in acres) *</label>
+            <input type="number" id="landSizeNri" name="landSize" min="0.1" step="0.01" required />
+
+            <label for="ownershipProofNri">Upload Proof of Ownership *</label>
+            <input type="file" id="ownershipProofNri" name="ownershipProof" accept=".pdf,.jpg,.jpeg,.png" required />
+
+            <button type="submit">Submit Registration</button>
+          </form>
+        `;
+      }
+
+      function getIndianForm() {
+        return `
+          <form action="/submit-indian-landowner" method="POST" enctype="multipart/form-data" class="registration-form" novalidate>
+            <h2>Indian Resident Landowner Registration</h2>
+            <label for="fullNameInd">Full Name *</label>
+            <input type="text" id="fullNameInd" name="fullName" required placeholder="Your full name" />
+
+            <label for="aadhaarNumber">Aadhaar Number *</label>
+            <input type="text" id="aadhaarNumber" name="aadhaarNumber" required placeholder="12-digit Aadhaar number" pattern="[0-9]{12}" />
+
+            <label for="contactEmailInd">Email *</label>
+            <input type="email" id="contactEmailInd" name="email" required placeholder="Your email address" />
+
+            <label for="contactNumberInd">Contact Number *</label>
+            <input type="tel" id="contactNumberInd" name="contactNumber" pattern="[0-9]{10}" placeholder="10-digit mobile number" required />
+
+            <label for="landLocationInd">Land Location (State, District) *</label>
+            <input type="text" id="landLocationInd" name="landLocation" required placeholder="E.g. Tamil Nadu, Coimbatore" />
+
+            <label for="landSizeInd">Land Size (in acres) *</label>
+            <input type="number" id="landSizeInd" name="landSize" min="0.1" step="0.01" required />
+			<label for="landSizeInd">Upload GoogleMap Location *</label>
+			<input type="number" id="landLocationInd" name="Upload GoogleMap Location" required placeholder="E.g. 23.823413507964712, 87.46185116819754" />
+
+            <label for="ownershipProofInd">Upload Proof of Ownership *</label>
+            <input type="file" id="ownershipProofInd" name="ownershipProof" accept=".pdf,.jpg,.jpeg,.png" required />
+
+            <button type="submit">Submit Registration</button>
+          </form>
+        `;
+      }
+    });
+
+    laborerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      heroButtons.style.display = 'none';
+
+      registrationContainer.innerHTML = getLaborerForm();
+    });
+
+    function getLaborerForm() {
+      return `
+        <form action="/submit_registration" method="POST" class="registration-form" novalidate>
+          <h2>Landless Laborer Registration</h2>
+
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
+
+          <label for="age">Age *</label>
+          <input type="number" id="age" name="age" min="14" max="100" required placeholder="Your age" />
+
+          <label for="gender">Gender *</label>
+          <select id="gender" name="gender" required>
+            <option value="">-- Select --</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="prefer_not_to_say">Prefer not to say</option>
+          </select>
+
+          <label for="state">State *</label>
+          <input type="text" id="state" name="state" required placeholder="State you reside in" />
+
+          <label for="district">District *</label>
+          <input type="text" id="district" name="district" required placeholder="District you reside in" />
+
+          <label for="skills">Skills / Experience</label>
+          <textarea id="skills" name="skills" rows="3" placeholder="E.g., harvesting, planting, machinery operation"></textarea>
+
+          <label for="contactNumber">Contact Number *</label>
+          <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" placeholder="10-digit mobile number" required />
+
+          <label for="availability">Availability *</label>
+          <select id="availability" name="availability" required>
+            <option value="">-- Select --</option>
+            <option value="full_time">Full-time</option>
+            <option value="part_time">Part-time</option>
+            <option value="seasonal">Seasonal</option>
+          </select>
+
+          <button type="submit">Register</button>
+        </form>
+      `;
+    }
+  </script>
+  
+</body>
+</html>
